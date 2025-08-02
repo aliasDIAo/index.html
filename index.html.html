@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diapalema - Accueil</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fdfaf4;
+      color: #333;
+    }
+    header {
+      background-color: #005a9c;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #e0d5c1;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #005a9c;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+    }
+    .section {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    footer {
+      background-color: #005a9c;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    .guide {
+      background: #eef5ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DIAPALEMA</h1>
+    <p>Renforcement scolaire du primaire au lycée</p>
+  </header>
+
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#cours">Cours</a>
+    <a href="#exercices">Exercices</a>
+    <a href="#qcm">QCM</a>
+    <a href="#connexion">Connexion</a>
+  </nav>
+
+  <div class="container">
+    <div class="section" id="accueil">
+      <h2>Bienvenue sur Diapalema</h2>
+      <p>Un espace d'apprentissage pour les élèves du primaire, du collège et du lycée. Retrouvez des leçons claires, des exercices corrigés et des QCM interactifs pour progresser à votre rythme.</p>
+    </div>
+
+    <div class="section" id="cours">
+      <h2>📘 Cours par niveau</h2>
+      <ul>
+        <li><strong>Primaire</strong> : Lecture, Calcul, Sciences, Éducation Civique...</li>
+        <li><strong>Collège</strong> : Mathématiques, SVT, Histoire-Géo, Français...</li>
+        <li><strong>Lycée</strong> : Philosophie, Maths, Physique-Chimie, Langues...</li>
+      </ul>
+    </div>
+
+    <div class="section" id="exercices">
+      <h2>📝 Exercices interactifs</h2>
+      <p>Entraînez-vous avec des exercices corrigés. Des fiches téléchargeables et des quiz sont bientôt disponibles.</p>
+    </div>
+
+    <div class="section" id="qcm">
+      <h2>✅ Exemple de QCM</h2>
+      <form id="quiz">
+        <p>1. Quelle est la capitale du Sénégal ?</p>
+        <label><input type="radio" name="q1" value="0"> Thiès</label><br>
+        <label><input type="radio" name="q1" value="1"> Dakar</label><br>
+        <label><input type="radio" name="q1" value="0"> Kaolack</label><br><br>
+
+        <button type="button" onclick="corrigerQCM()">Vérifier</button>
+        <p id="resultat"></p>
+      </form>
+    </div>
+
+    <div class="guide">
+      <h3>🌐 Comment mettre ce site en ligne avec GitHub Pages :</h3>
+      <ol>
+        <li>Rendez-vous sur <a href="https://github.com" target="_blank">https://github.com</a> et créez un compte (si vous n’en avez pas).</li>
+        <li>Cliquez sur "+" puis "New repository". Donnez-lui un nom comme <code>diapalema</code>.</li>
+        <li>Importez ce fichier HTML : cliquez sur "Add file" → "Upload files", sélectionnez le fichier puis "Commit changes".</li>
+        <li>Allez dans l’onglet "Settings" → "Pages". Sous "Source", choisissez la branche <code>main</code> et le dossier <code>/root</code> (ou <code>/</code>), puis cliquez sur "Save".</li>
+        <li>GitHub va générer un lien (du type <code>https://votre_nom.github.io/diapalema</code>). Cliquez dessus : votre site est en ligne ! 🎉</li>
+      </ol>
+      <p>🛟 Besoin d’aide en direct ? Je peux t’accompagner étape par étape.</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Diapalema - Tous droits réservés
+  </footer>
+
+  <script>
+    function corrigerQCM() {
+      const choix = document.querySelector('input[name="q1"]:checked');
+      const resultat = document.getElementById("resultat");
+      if (!choix) {
+        resultat.textContent = "Veuillez choisir une réponse.";
+        resultat.style.color = "red";
+        return;
+      }
+      if (choix.value === "1") {
+        resultat.textContent = "✅ Bonne réponse !";
+        resultat.style.color = "green";
+      } else {
+        resultat.textContent = "❌ Mauvaise réponse.";
+        resultat.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
